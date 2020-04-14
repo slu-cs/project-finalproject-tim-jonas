@@ -27,7 +27,8 @@ app.use(function(request, response, next) {
 
 // Redirect from the home page
 app.get('/', function(request, response) {
-  response.redirect('/questions');
+  console.log("Redirecting to users");
+  response.redirect('/users');
 });
 
 // Route content requests
