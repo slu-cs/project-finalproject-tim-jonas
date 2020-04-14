@@ -9,9 +9,10 @@ const Question = new mongoose.Schema({
 });
 
 // Speed up queries on all fields
-Voter.index({user_id: 1});
-Voter.index({question: 1});
-Voter.index({answer: 1});
+Question.index({user_id: 1});
+Question.index({question: 1});
+Question.index({options: 1});
+Question.index({answer: 1});
 
 // Compile and export this schema
 module.exports = mongoose.model('Question', Question);

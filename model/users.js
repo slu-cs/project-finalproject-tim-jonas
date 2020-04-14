@@ -8,9 +8,9 @@ const User = new mongoose.Schema({
 });
 
 // Speed up queries on all fields
-Voter.index({user_id: 1});
-Voter.index({firstName: 1});
-Voter.index({lastName: 1});
+User.index({user_id: 1});
+User.index({first_name: 1});
+User.index({last_name: 1});
 
 // Compile and export this schema
 module.exports = mongoose.model('User', User);
