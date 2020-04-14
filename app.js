@@ -25,6 +25,11 @@ app.use(function(request, response, next) {
   next();
 });
 
+// Redirect from the home page
+app.get('/', function(request, response) {
+  response.redirect('/questions');
+});
+
 // Route content requests
 app.use('/', router);
 

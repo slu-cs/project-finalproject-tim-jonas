@@ -5,6 +5,8 @@ const users = require('./controller/users');
 // Create the router
 const router = express.Router();
 
+router.get('/', )
+
 // Handle question requests
 router.get('/questions', questions.index);
 router.get('/questions/:user_id', questions.retrieve);
