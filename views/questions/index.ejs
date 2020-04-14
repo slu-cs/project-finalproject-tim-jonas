@@ -16,12 +16,13 @@
         </div>
         <div class="col">
           <main class="p-3">
-            <h2 class="text-center"><%- question.user_id -%></h2>
-            <h3>Question: question.question</h3>
-            <%_ for (const option of question.options) { -%>
+            <h2 class="text-center"><%- question[0].user_id -%></h2>
+            <h3>Question: question[0].question</h3>
+            <%_ console.log(`This is a question: ${question[0]}`)-%>
+            <%_ for (const option of question[0].options) { -%>
               <p><%= option -%></p>
             <%_ } -%>
-            <h3>Answer: question.answer</h3>
+            <h3>Answer: question[0].answer</h3>
           </main>
         </div>
       </div>
