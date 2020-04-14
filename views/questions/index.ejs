@@ -16,7 +16,7 @@
         </div>
         <div class="col">
           <main class="p-3">
-            <h2 class="text-center"><%= question.user_id</h2>
+            <h2 class="text-center"><%- question.user_id -%></h2>
             <h3>Question: question.question</h3>
             <%_ for (const option of question.options) { -%>
               <p><%= option -%></p>
