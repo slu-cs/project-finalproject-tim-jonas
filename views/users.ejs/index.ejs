@@ -6,10 +6,8 @@
     <div class="container-fluid">
       <div class="row">
         <ul>
-          <%_ for (const id of userIDS) {
-                for(const first of firstNames){
-                  for(const last of lastNames){-%>
-          <li<%= id -%>,   <%= first  -%>,  <%= last-%></li>
+          <%_ for (const user of users) {
+          <li><%= user.id -%>,   <%= user.first_name  -%>,  <%= user.last_name-%></li>
           <%_ }}} -%>
           </ul>
       </div>

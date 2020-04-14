@@ -1,10 +1,25 @@
 
+const Question = require('../model/questions');
+
 // get all of the questions
 module.exports.index = function(request, response) {
-  response.send('GET /questions');
+  Question.distinct('user_id')
+    .then(userIDs => response.redirect(`/questions/${userIDs[0]}`))
+    .catch(error => next(error));
 };
 
 // get all of the questions for a single user
 module.exports.retrieve = function(request, response) {
-  response.send(`GET /questions/${request.params.user_id}`);
+  const queries = [
+    Question.findById(request.params.user_id),
+    Question.distinct('user_id')
+  ];
+
+  Promise.all(queries).then(function([question, userIDs]) {
+    if (course) {
+      response.render('questions/index', {question: question, userIDs: userIDs});
+    } else {
+      next(); // No such course
+    }
+  }).catch(error => next(error));
 };
