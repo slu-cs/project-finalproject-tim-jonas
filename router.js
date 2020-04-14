@@ -1,6 +1,6 @@
 const express = require('express');
-const questions = require('./controllers/questions');
-const users = require('./controllers/users');
+const questions = require('./controller/questions');
+const users = require('./controller/users');
 
 // Create the router
 const router = express.Router();
