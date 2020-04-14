@@ -12,7 +12,6 @@
               <a href="/questions/<%= user -%>" class="nav-item nav-link <%= status -%>"></a>
             <%_ } -%>
           </nav>
-          This is the questions page
         </div>
         <div class="col">
           <main class="p-3">
@@ -21,7 +20,7 @@
             <%_ for (const option of question[0].options) { -%>
               <p><%= option -%></p>
             <%_ } -%>
-            <h3>Answer: <%_ question[0].answer -%></h3>
+            <h3>Answer: <%- question[0].answer -%></h3>
           </main>
         </div>
       </div>
