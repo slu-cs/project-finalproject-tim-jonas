@@ -26,10 +26,12 @@ app.use(function(request, response, next) {
 });
 
 // Redirect from the home page
-app.get('/', function(request, response) {
-  console.log("Redirecting to users");
-  response.render('index');
-});
+// app.get('/', function(request, response) {
+//   console.log("Redirecting to users");
+//   response.render('index');
+// });
+
+app.get('/', (req, res) => res.send('Quiz Your Friends!'))
 
 // Route content requests
 app.use('/', router);
