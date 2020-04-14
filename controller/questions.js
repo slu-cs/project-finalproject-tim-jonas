@@ -11,12 +11,13 @@ module.exports.index = function(request, response) {
 // get all of the questions for a single user
 module.exports.retrieve = function(request, response) {
   const queries = [
-    Question.findById(request.params.user_id),
+    Question.find().where('user_id').equals(request.params.user_id),
     Question.distinct('user_id')
   ];
 
   Promise.all(queries).then(function([question, userIDs]) {
-    if (course) {
+    if (question) {
+      console.log(question)
       response.render('questions/index', {question: question, userIDs: userIDs});
     } else {
       next(); // No such course

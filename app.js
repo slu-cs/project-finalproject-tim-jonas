@@ -28,7 +28,7 @@ app.use(function(request, response, next) {
 // Redirect from the home page
 app.get('/', function(request, response) {
   console.log("Redirecting to users");
-  response.redirect('/users');
+  response.render('index');
 });
 
 // Route content requests
@@ -47,5 +47,5 @@ app.use(function(error, request, response) {
 });
 
 // Start the server
-app.listen(3001);
+app.listen(3000);
 console.log('Server is ready.');
