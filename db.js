@@ -9,7 +9,7 @@ module.exports = function() {
   mongoose.set('useFindAndModify', false);
 
   // Start connecting
-  mongoose.connect('mongodb://localhost/project-finalproject-tim-jonas');
+  mongoose.connect('mongodb://localhost/quiz-your-friends');
 
   // Log errors
   mongoose.connection.on('error', function(error) {

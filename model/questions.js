@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const Question = new mongoose.Schema({
   user_id: String, 
   question: String,
-  answer: String
+  answer: String,
+  options: [String]
 });
 
 // Speed up queries on all fields

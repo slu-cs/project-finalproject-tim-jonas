@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const connect = require('./db');
-const User = require('./users');
-const Question = require('./questions');
+const User = require('./model/users');
+const Question = require('./model/questions');
 
 // Connect to the database
 connect();
