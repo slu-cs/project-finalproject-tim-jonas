@@ -1,0 +1,26 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  // Insert a form
+  $(document).on('click', '.insert', function(event) {
+    $(this).before($(`
+      <form class="form-inline">
+        <input type="text" name="Question" class="form-control form-control-sm m-1">
+        <input type="text" name="option1" class="form-control form-control-sm m-1">
+        <input type="text" name="option2" class="form-control form-control-sm m-1">
+        <input type="text" name="option3" class="form-control form-control-sm m-1">
+        <input type="text" name="answer" class="form-control form-control-sm m-1">
+        <button class="create btn btn-sm btn-primary m-1">Save</button>
+      </form>
+    `));
+  });
+
+
+// Create a course
+$('#create').on('submit', function(event) {
+  const form = $(this);
+  event.preventDefault();
+  $.ajax({method: 'post', url: '/questions', data: form.serialize()})
+    .done(id => window.location.replace(`/questions/${id}`))
+    .fail(error => alert(error.responseText));
+});
+</script>

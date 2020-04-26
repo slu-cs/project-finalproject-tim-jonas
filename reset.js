@@ -24,7 +24,8 @@ const questions = [
   new Question({user_id: 'jpeek', question: 'eye color', options: ['brown', 'blue', 'green'], answer: 'blue'}),
   new Question({user_id: 'jpeek', question: 'number of siblings', options: ['0', '1', '2'], answer: '1'}),
   new Question({user_id: 'jpattz', question: 'age', options: ['19', '20', '21', '22'], answer: '21'}),
-  new Question({user_id: 'jpattz', question: 'undergrad collge', options: ['harvard', 'unh', 'SLU'], answer: 'SLU'})
+  new Question({user_id: 'jpattz', question: 'football team', options: ['patriots', 'bills', '49ers', 'broncos'], answer: 'broncos'}),
+  new Question({user_id: 'jpattz', question: 'undergrad college', options: ['harvard', 'unh', 'SLU'], answer: 'SLU'})
 ];
 
 // Reset the database

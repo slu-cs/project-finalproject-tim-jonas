@@ -18,9 +18,16 @@ module.exports.retrieve = function(request, response) {
   Promise.all(queries).then(function([question, userIDs]) {
     if (question) {
       console.log(question)
+
       response.render('questions/index', {question: question, userIDs: userIDs});
     } else {
       next(); // No such course
     }
   }).catch(error => next(error));
+};
+
+module.exports.create = function(request, response){
+  Question.create(request.body)
+  .then(course => response.status(201).send(question.id))
+  .catch(error => nex(error));
 };

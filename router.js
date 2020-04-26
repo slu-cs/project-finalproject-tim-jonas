@@ -9,6 +9,8 @@ const router = express.Router();
 router.get('/questions', questions.index);
 router.get('/questions/:user_id', questions.retrieve);
 
+router.post('/questions', questions.create);
+
 // Handle user requests
 router.get('/users', users.index);
 
