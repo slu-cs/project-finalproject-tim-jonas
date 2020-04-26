@@ -1,7 +1,19 @@
 <div class="col">
 
   <%- include('./scripts'); -%>
-  <form class="create" action="index.html" method="post">
-    <button type="button" name="button">pls</button>
+  <form id="create" class="form my-1">
+    <h2>Enter a Question</h2>
+    <div class="form-row">
+      <input type="text" name="question" placeholder="Question" size="1" class="form-control col form-control-lg">
+      <input type="text" name="id" placeholder="userid" size="1" class="form-control  col-3 form-control-lg">
+    </div>
+    <ul>
+      <li><input type="text" name="option1" placeholder="option1" size="1" class="form-control"></li>
+      <li><input type="text" name="option2" placeholder="option2" size="1" class="form-control"></li>
+      <li><input type="text" name="option3" placeholder="option3" size="1" class="form-control"></li>
+      <li><input type="text" name="answer" placeholder="answer" size="1" class="form-control"></li>
+    </ul>
+
+    <button id = "create" class="btn btn-sm btn-primary m-1">Submit question</button>
   </form>
 </div>
