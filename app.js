@@ -12,6 +12,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use(express.urlencoded({extended: false}));
+
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response) {
   response.status(204).end();

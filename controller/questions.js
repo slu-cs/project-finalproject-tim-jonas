@@ -28,6 +28,6 @@ module.exports.retrieve = function(request, response) {
 
 module.exports.create = function(request, response){
   Question.create(request.body)
-  .then(course => response.status(201).send(question.id))
-  .catch(error => nex(error));
+  .then(question => response.status(201).send(question))
+  .catch(error => next(error));
 };

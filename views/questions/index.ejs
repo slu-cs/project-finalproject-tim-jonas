@@ -3,6 +3,6 @@
   <%- include('../head'); -%>
   <body>
     <%- include('./display'); -%>
-    <%- include('./addQuestions'); -%>
+    <%- include('./addQuestions', {question: question, userIDs: userIDs}); -%>
   </body>
 </html>

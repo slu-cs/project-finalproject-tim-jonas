@@ -3,10 +3,10 @@
 
 // Create a course
 $('#create').on('submit', function(event) {
-  const form = $(this);
+  const form = $(this).closest('form');
   event.preventDefault();
   $.ajax({method: 'post', url: '/questions', data: form.serialize()})
-    .done(id => window.location.replace(`/questions/${id}`))
+    .done()
     .fail(error => alert(error.responseText));
 });
 </script>
