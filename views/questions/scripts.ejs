@@ -20,12 +20,6 @@ $(document).on('click', '.delete', function(event) {
  });
 
 
-const getAnswerFromId = function(id){
-   for (const aQuestion of question) {
-    console.log(aQuestion.user_id);
-  }
-}
-
  $(document).on('click', '.enter', function(event) {
     const form = $(this).closest('form');
     const x = $( "#options option:selected" , form ).text();
@@ -33,14 +27,9 @@ const getAnswerFromId = function(id){
     const questionId = $(form).attr('id');
     console.log(questionId)
     console.log(x);
-    for (const aQuestion of question) {
-     console.log(aQuestion.user_id);
-   }
+
 
     event.preventDefault();
     });
-  //   $.ajax({method: 'delete', url: `/questions/${form.attr('id')}`})
-  //     .done(() => form.remove())
-  //     .fail(error => alert(error.responseText));
-  // });
+
 </script>
