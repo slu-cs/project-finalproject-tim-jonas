@@ -11,7 +11,7 @@ router.get('/questions/:user_id', questions.retrieve);
 
 router.post('/questions', questions.create);
 router.delete('/questions/:user_id', questions.delete);
-router.put('/courses/:user_id', questions.update);
+router.put('/questions/:user_id', questions.update);
 
 
 // Handle user requests
