@@ -19,9 +19,24 @@ $(document).on('click', '.delete', function(event) {
      .fail(error => alert(error.responseText));
  });
 
+
+const getAnswerFromId = function(id){
+   for (const aQuestion of question) {
+    console.log(aQuestion.user_id);
+  }
+}
+
  $(document).on('click', '.enter', function(event) {
     const form = $(this).closest('form');
-    console.log(form)
+    const x = $( "#options option:selected" , form ).text();
+
+    const questionId = $(form).attr('id');
+    console.log(questionId)
+    console.log(x);
+    for (const aQuestion of question) {
+     console.log(aQuestion.user_id);
+   }
+
     event.preventDefault();
     });
   //   $.ajax({method: 'delete', url: `/questions/${form.attr('id')}`})
