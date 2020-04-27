@@ -18,5 +18,8 @@ router.put('/courses/:user_id', questions.update);
 router.get('/users', users.index);
 router.post('/users', users.create);
 
+
+
+
 // Export the router
 module.exports = router;

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = require('./router');
+const session = require('express-session');
 const connect = require('./db');
 
 // Connect to the database
@@ -14,6 +15,13 @@ app.set('views', './views');
 
 // Parse request bodies like query strings
 app.use(express.urlencoded({extended: false}));
+
+// app.use(session({
+//   name: 'quiz', // Name of client cookies
+//   secret: 'temporary', // Password for client cookies
+//   resave: false, // Recommended setting
+//   saveUninitialized: false // Recommended setting
+// }));
 
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response) {
