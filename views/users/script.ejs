@@ -1,0 +1,15 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+
+$('#new').on('submit', function(event) {
+  console.log("Called")
+  const form = $(this).closest('form');
+  event.preventDefault();
+  $.ajax({method: 'post', url: '/users', data: form.serialize()})
+    .done()
+    .fail(error => alert(error.responseText));
+});
+
+
+</script>

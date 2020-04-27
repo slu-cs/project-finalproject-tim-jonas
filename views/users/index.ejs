@@ -3,21 +3,34 @@
   <%- include('../head'); -%>
   <body>
     <%- include('../navbar', {active: 'users'}); -%>
-    <div class="container-fluid">
-      <div class="col">
+    <div class="row">
+      <div class="col p-5">
         <h1>Users</h1>
-        <ul class="col-7">
+        <ul class="col p-3">
           <%_ for (const user of users) { -%>
-          <li>
-            <div class="border rounded bg-light ">
-              <h3 ><%- user.user_id -%></h3>
-              <h1 class="text-right p-3"><%- user.first_name  -%></h1>
-              <h1 class="text-right p-3"><%- user.last_name-%></h1>
-            </div>
-          </li>
+            <form id="<%= user.id -%>" >
+              <div class="border rounded bg-light ">
+                <h3 ><%- user.user_id -%></h3>
+                <h1 class="text-right p-3"><%- user.first_name-%></h1>
+                <h1 class="text-right p-3"><%- user.last_name-%></h1>
+              </div>
+            </form>
           <%_ } -%>
-        </ul>
       </div>
+      <!-- <div class="col">
+
+        <form id="new" class="form my-1 p-4">
+          <h2>Enter Information</h2>
+          <input type="text" name="user_id" placeholder="username" size="1" class="form-control col form-control-lg">
+          <div class="form-row">
+            <input type="text" name="first_name" placeholder="first" size="1" class="form-control col form-control-lg">
+            <input type="text" name="last_name" placeholder="last" size="1" class="form-control  col form-control-lg">
+          </div>
+        <button id = "new" class="btn btn-sm btn-primary m-1">new user</button>
+        </form>
+        <%- include('./script'); -%>
+      </div> -->
     </div>
+
   </body>
 </html>

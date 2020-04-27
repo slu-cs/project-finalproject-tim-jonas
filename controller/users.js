@@ -7,3 +7,10 @@ module.exports.index = function(request, response, next) {
     .then(users => response.render('users/index', {users: users}))
     .catch(error => next(error));
 };
+
+//create user
+module.exports.create = function(request, response){
+  User.create(request.body)
+  .then(user => response.status(201).send(user))
+  .catch(error => next(error));
+};
