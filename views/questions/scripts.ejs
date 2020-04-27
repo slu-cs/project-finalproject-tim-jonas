@@ -18,4 +18,14 @@ $(document).on('click', '.delete', function(event) {
      .done(() => form.remove())
      .fail(error => alert(error.responseText));
  });
+
+ $(document).on('click', '.enter', function(event) {
+    const form = $(this).closest('form');
+    console.log(form)
+    event.preventDefault();
+    });
+  //   $.ajax({method: 'delete', url: `/questions/${form.attr('id')}`})
+  //     .done(() => form.remove())
+  //     .fail(error => alert(error.responseText));
+  // });
 </script>
