@@ -12,6 +12,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// Parse request bodies like query strings
 app.use(express.urlencoded({extended: false}));
 
 // Ignore icon requests

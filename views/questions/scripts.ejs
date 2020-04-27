@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-// Create a course
+// Create aQUESTION:
 $('#create').on('submit', function(event) {
   const form = $(this).closest('form');
   event.preventDefault();
@@ -9,4 +9,13 @@ $('#create').on('submit', function(event) {
     .done()
     .fail(error => alert(error.responseText));
 });
+
+
+$(document).on('click', '.delete', function(event) {
+   const form = $(this).closest('form');
+   event.preventDefault();
+   $.ajax({method: 'delete', url: `/questions/${form.attr('id')}`})
+     .done(() => form.remove())
+     .fail(error => alert(error.responseText));
+ });
 </script>

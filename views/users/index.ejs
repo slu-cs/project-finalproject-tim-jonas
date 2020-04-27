@@ -4,11 +4,17 @@
   <body>
     <%- include('../navbar', {active: 'users'}); -%>
     <div class="container-fluid">
-      <div class="row">
+      <div class="col">
         <h1>Users</h1>
-        <ul>
+        <ul class="col-7">
           <%_ for (const user of users) { -%>
-          <li class = 'border rounded bg-light'><%- user.user_id -%>,   <%- user.first_name  -%>,  <%- user.last_name-%></li>
+          <li>
+            <div class="border rounded bg-light ">
+              <h3 ><%- user.user_id -%></h3>
+              <h1 class="text-right p-3"><%- user.first_name  -%></h1>
+              <h1 class="text-right p-3"><%- user.last_name-%></h1>
+            </div>
+          </li>
           <%_ } -%>
         </ul>
       </div>

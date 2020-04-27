@@ -2,7 +2,11 @@
 <html>
   <%- include('../head'); -%>
   <body>
-    <%- include('./display'); -%>
-    <%- include('./addQuestions', {question: question, userIDs: userIDs}); -%>
+    <%- include('../navbar', {active: 'questions'}); -%>
+    <div class="row">
+      <%- include('./display'); -%>
+      <%- include('./addQuestions'); -%>
+    </div>
+
   </body>
 </html>

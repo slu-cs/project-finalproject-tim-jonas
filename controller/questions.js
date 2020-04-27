@@ -31,3 +31,16 @@ module.exports.create = function(request, response){
   .then(question => response.status(201).send(question))
   .catch(error => next(error));
 };
+
+module.exports.delete = function(request, response) {
+  Question.findByIdAndDelete(request.params.user_id)
+    .then(question => question ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
+
+// PUT /questions/:id (with the changes in the request body)
+module.exports.update = function(request, response) {
+  Question.findByIdAndUpdate(request.params.user_id, request.body)
+    .then(question => question ? response.status(200).end() : next())
+    .catch(error => next(error));
+};

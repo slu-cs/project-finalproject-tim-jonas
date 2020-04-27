@@ -5,15 +5,14 @@
     <h2>Enter a Question</h2>
     <div class="form-row">
       <input type="text" name="question" placeholder="Question" size="1" class="form-control col form-control-lg">
-      <input type="text" name="user_id" placeholder="userid" size="1" class="form-control  col-3 form-control-lg">
+      <input type="text" name="user_id" placeholder="user id" size="1" class="form-control  col-3 form-control-lg">
     </div>
     <ul>
       <li><input type="text" name="options" placeholder="option1" size="1" class="form-control"></li>
       <li><input type="text" name="options" placeholder="option2" size="1" class="form-control"></li>
       <li><input type="text" name="options" placeholder="option3" size="1" class="form-control"></li>
-      <li><input type="text" name="answer" placeholder="answer" size="1" class="form-control"></li>
+      <li><input type="text" name="answer" name="options" placeholder="answer" size="1" class="form-control"></li>
     </ul>
-
     <button id = "create" class="btn btn-sm btn-primary m-1">Submit question</button>
   </form>
   <%- include('./scripts'); -%>
