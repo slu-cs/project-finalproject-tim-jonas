@@ -1,19 +1,31 @@
 <div class="col">
 
 
-  <form id="create" class="form my-1">
-    <h2>Enter a Question</h2>
-    <div class="form-row">
-      <input type="text" name="question" placeholder="Question" size="1" class="form-control col form-control-lg">
-      <input type="text" name="user_id" placeholder="user id" size="1" class="form-control  col-3 form-control-lg">
-    </div>
-    <ul>
-      <li><input type="text" name="options" placeholder="option1" size="1" class="form-control"></li>
-      <li><input type="text" name="options" placeholder="option2" size="1" class="form-control"></li>
-      <li><input type="text" name="options" placeholder="option3" size="1" class="form-control"></li>
-      <li><input type="text" name="answer" name="options" placeholder="answer" size="1" class="form-control"></li>
+  <form id="create" class="form">
+    <h2 class="text-center">Enter a Question</h2>
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        <div class="form-row">
+          <input type="text" name="question" placeholder="Question" size="1" class="form-control col mr-2 form-control-lg">
+          <input type="text" name="user_id" placeholder="user id" size="1" class="form-control  col-5 form-control-lg">
+        </div>
+      </li>
+      <li class="list-group-item list-group-item-info">
+        <input type="text" name="options" placeholder="option1" size="1" class="form-control">
+      </li>
+      <li class="list-group-item list-group-item-info">
+        <input type="text" name="options" placeholder="option2" size="1" class="form-control">
+      </li>
+      <li class="list-group-item list-group-item-info">
+        <input type="text" name="options" placeholder="option3" size="1" class="form-control">
+      </li>
+      <li class="list-group-item list-group-item-info">
+        <input type="text" name="answer" name="options" placeholder="answer" size="1" class="form-control">
+      </li>
     </ul>
-    <button id = "create" class="btn btn-sm btn-primary m-1">Submit question</button>
+    <div class="text-center mt-2">
+        <button id = "create" class="btn btn-sm btn-info m-1">Submit question</button>
+    </div>
   </form>
   <%- include('./scripts'); -%>
 </div>

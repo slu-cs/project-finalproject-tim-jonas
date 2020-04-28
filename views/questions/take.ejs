@@ -9,7 +9,6 @@
 </div>
 <div class="col">
   <main class="p-3">
-
       <%_ for (const aQuestion of question) {-%>
         <form id="<%= aQuestion.id -%>" value = "<%= aQuestion.id -%>">
         <h1 class ="bg-light p-1"><%= aQuestion.user_id -%> </h1>
@@ -22,10 +21,9 @@
 
         </select>
         </div>
-        <button class= " enter btn btn-sm btn-primary m-1">Submit</button>
+        <button class= "enter btn btn-sm btn-primary m-1">Submit</button>
         </form>
       <%_ } -%>
-
   </main>
 
   <%- include('./scripts', {question: question}); -%>
