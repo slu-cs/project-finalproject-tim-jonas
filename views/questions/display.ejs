@@ -13,26 +13,32 @@
   </nav>
 </div>
 <div class="col">
-  <main class="px-3">
-      <h2 class="text-center">Questions</h2>
-      <%_ for (const aQuestion of question) {-%>
-        <form class='pb-3' id="<%= aQuestion.id -%>" >
-            <h3 class ="bg-info text-center rounded p-2"><%= aQuestion.user_id -%> </h3>
-            <div class="border rounded p-3" style="background-color: #bee5eb;">
-            <h3>Question: <%- aQuestion.question -%></h3>
-            <%_ for (const option of aQuestion.options) {-%>
-              <div class="row">
-                <p class = "col-9"><%= option -%></p>
-              </div>
-            <%_ } -%>
-            <h2 class = "text-success">Answer: <%- aQuestion.answer -%></h2>
-            </div>
-            <%_ if (admin) { -%>
-                <button class="delete btn btn-sm btn-primary m-1">Delete</button>
-            <%_ } -%>
-            <button class="update btn btn-sm btn-primary m-1">Update</button>
-        </form>
-      <%_ } -%>
+    <main class="px-3">
+        <h2 class="text-center">Questions</h2>
+        <div>
+        <%_ if (admin) {-%>
+            <%- include('./edit', {questions: question}); -%>
+        <%_ } else {-%>
+            <%_ for (const aQuestion of question) {-%>
+                <form class='pb-3' id="<%= aQuestion.id -%>" >
+                    <h3 class ="bg-info text-center rounded p-2"><%= aQuestion.user_id -%> </h3>
+                    <div class="border rounded p-3" style="background-color: #bee5eb;">
+                    <h3>Question: <%- aQuestion.question -%></h3>
+                    <%_ for (const option of aQuestion.options) {-%>
+                      <div class="row">
+                        <p class = "col-9"><%= option -%></p>
+                      </div>
+                    <%_ } -%>
+                    <h2 class = "text-success">Answer: <%- aQuestion.answer -%></h2>
+                    </div>
+                    <%_ if (admin) { -%>
+                        <button class="delete btn btn-sm btn-primary m-1">Delete</button>
+                        <button class="update btn btn-sm btn-primary m-1">Update</button>
+                    <%_ } -%>
+                </form>
+            <%_ }-%>
+        <%_ } -%>
+        </div>
   </main>
   <%- include('./scripts'); -%>
 </div>

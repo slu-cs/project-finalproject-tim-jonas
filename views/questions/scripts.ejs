@@ -25,8 +25,15 @@ $(document).on('click', '.delete', function(event) {
      .fail(error => alert(error.responseText));
  });
 
-// Update a course
-
+// Update a question
+$('.update').on('submit', function(event) {
+    const form = $(this);
+    console.log('in the update');
+    const question_id = form.attr('id');
+    event.preventDefault();
+    $.ajax({method: 'put', url: `/questions/${question_id}`, data: form.serialize()})
+        .fail(error => alert(error.responseText));
+});
 
 
 $(document).on('click', '.enter', function(event) {
