@@ -9,22 +9,32 @@
 </div>
 <div class="col">
   <main class="p-3">
-      <%_ for (const aQuestion of question) {-%>
-        <form id="<%= aQuestion.id -%>" value = "<%= aQuestion.id -%>">
+      <%_
+      var count = 0;
+      for (const aQuestion of question) {
+        count++;-%>
+
+        <form id="<%= aQuestion.id -%>"  answer = "<%= aQuestion.answer -%>">
         <h1 class ="bg-light p-1"><%= aQuestion.user_id -%> </h1>
-        <div class="border rounded p-3">
+
+        <div id ="<%= "div" + aQuestion.id -%>" class="border rounded p-3">
         <h3>Question: <%- aQuestion.question -%></h3>
         <select id = "options">
         <%_ for (const option of aQuestion.options) {-%>
             <option value=""><%= option -%></option>
         <%_ } -%>
-
         </select>
         </div>
-        <button class= "enter btn btn-sm btn-primary m-1">Submit</button>
-        </form>
-      <%_ } -%>
-  </main>
 
-  <%- include('./scripts', {question: question}); -%>
+        <button  id ="<%= "b" + aQuestion.id -%>" class= "enter btn btn-sm btn-primary m-1">Submit</button>
+        </form>
+      <%_ }
+      console.log(count); -%>
+    <div class="row">
+      <h3 id = "score" value = "0" class = "col-2" >SCORE: </h3>
+      <h3 id = "currscore" class="col-2"> 0 </h3>
+      <h3 class = "col"><%= count-%></h3>
+    </div>
+
+  </main>
 </div>

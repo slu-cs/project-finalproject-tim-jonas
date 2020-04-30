@@ -35,17 +35,28 @@ $('.update').on('submit', function(event) {
         .fail(error => alert(error.responseText));
 });
 
-
+//get choice and answer from user, check if choice is correct then
 $(document).on('click', '.enter', function(event) {
     const form = $(this).closest('form');
-    const x = $( "#options option:selected" , form ).text();
-
+    const choice = $( "#options option:selected" , form ).text();
+    const answer = $(form).attr('answer');
     const questionId = $(form).attr('id');
-    console.log(questionId)
-    console.log(x);
+    const bID = "#b"+questionId;
+    const divID = "#div"+questionId;
 
+    if(choice === answer){
+      const score = parseInt($('#score').attr('value')); //find current score
+      var newscore = score + 1;
+      $('#score').attr('value', newscore);
+      $('#currscore').html(newscore);
+      $(divID).html("<h2 class = \"text-success\">correct</h2>");
+    }else{
+      $(divID).html("<h2 class = \"text-danger\">incorrect</h2>");
+    }
+    $(bID).remove();
 
     event.preventDefault();
 });
+
 
 </script>
