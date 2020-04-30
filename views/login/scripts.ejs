@@ -1,0 +1,34 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+// Login
+$('.login-form').on('submit', function(event) {
+  const form = $(this);
+  const user_id = $('#user_id').val();
+  event.preventDefault();
+  $.ajax({method: 'get', url: `/login/?user_id=${user_id}`})
+    .fail(error => alert(error.responseText));
+});
+
+// Update a question
+$('.update').on('submit', function(event) {
+  const form = $(this);
+  const question_id = form.attr('id');
+  event.preventDefault();
+  $.ajax({method: 'put', url: `/questions/${question_id}`, data: form.serialize()})
+    .fail(error => alert(error.responseText));
+});
+
+// Create a question:
+$('.create').on('submit', function(event) {
+  const form = $(this);
+  const user_id = form.attr('id');
+  event.preventDefault();
+  const data = $(this).serializeArray(); // convert form to array
+  data.push({name: "user_id", value: user_id});
+  $.ajax({method: 'post', url: '/questions', data: $.param(data)})
+    .done()
+    .fail(error => alert(error.responseText));
+});
+
+</script>

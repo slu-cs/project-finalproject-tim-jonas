@@ -1,4 +1,5 @@
 const express = require('express');
+const home = require('./controller/home');
 const questions = require('./controller/questions');
 const users = require('./controller/users');
 
@@ -14,9 +15,12 @@ const authorize = function(request, response, next) {
   }
 };
 
+router.get('/', home.retrieve);
+
 // Handle question requests
 router.get('/questions', questions.index);
 router.get('/questions/:user_id', questions.retrieve);
+router.get('/questions/user/:user_id', questions.retrieve_user);
 
 router.post('/questions', questions.create);
 router.delete('/questions/:user_id', authorize, questions.delete);

@@ -36,26 +36,21 @@ app.use(function(request, response, next) {
   next();
 });
 
-// Redirect from the home page
-app.get('/', function(request, response) {
-  console.log("Redirecting to questions");
-  response.redirect('/questions');
-});
-
 // Enter admin mode and return to the previous page
 app.get('/login', function(request, response) {
-  request.session.admin = true;
-  response.redirect('back');
+  request.session.name = request.query.user_id;
+  response.redirect(`/questions/user/${request.session.name}`);
 });
 
 // Exit admin mode and return to the previous page
 app.get('/logout', function(request, response) {
-  request.session.admin = false;
+  request.session.name = null;
   response.redirect('back');
 });
 
 // Make the mode available in all views
 app.use(function(request, response, next) {
+  response.locals.name = request.session.name;
   response.locals.admin = request.session.admin;
   next();
 });

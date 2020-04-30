@@ -5,11 +5,4 @@
     <a href="/users" class="nav-item nav-link <%= (active === 'users') ? 'active' : 'inactive' -%>">Users</a>
     <a href="/questions" class="nav-item nav-link <%= (active === 'questions') ? 'active' : 'inactive' -%>">Questions</a>
   </nav>
-  <nav class="navbar-nav ml-auto">
-    <%_ if (admin) { -%>
-      <a href="/logout" class="nav-item nav-link">Logout</a>
-    <%_ } else { -%>
-      <a href="/login" class="nav-item nav-link">Login</a>
-    <%_ } -%>
-  </nav>
 </header>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../head'); -%>
+  <body>
+    <%- include('../navbar', {active: 'home'}); -%>
+    <div class="row py-4 px-5">
+      <%_ console.log(`Name: ${name}`);-%>
+      <%_ if (name) { -%>
+        <%- include('./home', {question: question}); -%>
+        <%- include('./add', {name: name}); -%>
+      <%_ } else { -%>
+        <%- include('./login'); -%>
+      <%_ } -%>
+    </div>
+    <%- include('./scripts'); -%>
+  </body>
+</html>

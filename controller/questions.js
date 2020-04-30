@@ -4,7 +4,13 @@ const Question = require('../model/questions');
 // get all of the questions
 module.exports.index = function(request, response) {
   Question.distinct('user_id')
-    .then(userIDs => response.redirect(`/questions/${userIDs[0]}`))
+    .then(userIDs => {
+      if (userIDs[0] !== request.session.name) {
+        response.redirect(`/questions/${userIDs[0]}`);
+      } else {
+        response.redirect(`/questions/${userIDs[1]}`);
+      }
+    })
     .catch(error => next(error));
 };
 
@@ -17,11 +23,26 @@ module.exports.retrieve = function(request, response) {
 
   Promise.all(queries).then(function([question, userIDs]) {
     if (question) {
-      console.log(question)
-
       response.render('questions/index', {question: question, userIDs: userIDs});
     } else {
       next(); // No such course
+    }
+  }).catch(error => next(error));
+};
+
+// get the questions for the current user
+module.exports.retrieve_user = function(request, response) {
+  console.log('In the retrieve user function');
+  const queries = [
+    Question.find().where('user_id').equals(request.params.user_id),
+    Question.distinct('user_id')
+  ];
+
+  Promise.all(queries).then(function([question, userIDs]) {
+    if (question) {
+      response.render('login/index', {question: question, userIDs: userIDs});
+    } else {
+      next(); // TODO: No such user, render create account
     }
   }).catch(error => next(error));
 };
