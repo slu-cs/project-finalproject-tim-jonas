@@ -1,18 +1,22 @@
 <div class="col-1 ">
   <h6 class="centered">People</h6>
   <nav class="nav nav-pills nav-fill flex-column">
+    <ul class="list-group">
     <%_ for (const user of userIDs) { -%>
       <%_ const status = (user === question.user_id) ? 'active bg-dark' : 'inactive'; -%>
       <%_ if (user !== name) { -%>
-        <a href="/questions/<%= user -%>" class="nav-item nav-link "> <%= user -%></a>
+        <li class="list-group-item list-group-item-info">
+          <a href="/questions/<%= user -%>" class="text-dark nav-item"> <%= user -%></a>
+        </li>
       <%_ } -%>
     <%_ } -%>
+    </ul>
   </nav>
 </div>
 <div class="col">
   <main class="p-3">
       <%_ if (question) { -%>
-        <h1 class ="bg-light p-1"><%= question[0].user_id -%> </h1>
+        <h3 class ="bg-info text-center rounded p-2"><%= question[0].user_id -%></h3>
       <%_ } -%>
       <%_
       var count = 0;
