@@ -44,7 +44,7 @@ app.get('/login', function(request, response) {
 
 // Exit admin mode and return to the previous page
 app.get('/logout', function(request, response) {
-  request.session.name = null;
+  request.session.name = undefined;
   response.redirect('back');
 });
 

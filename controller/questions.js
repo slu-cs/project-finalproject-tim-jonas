@@ -32,7 +32,6 @@ module.exports.retrieve = function(request, response) {
 
 // get the questions for the current user
 module.exports.retrieve_user = function(request, response) {
-  console.log('In the retrieve user function');
   const queries = [
     Question.find().where('user_id').equals(request.params.user_id),
     Question.distinct('user_id')

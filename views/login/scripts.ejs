@@ -7,6 +7,7 @@ $('.login-form').on('submit', function(event) {
   const user_id = $('#user_id').val();
   event.preventDefault();
   $.ajax({method: 'get', url: `/login/?user_id=${user_id}`})
+    .done(() => location = location)
     .fail(error => alert(error.responseText));
 });
 
@@ -27,8 +28,25 @@ $('.create').on('submit', function(event) {
   const data = $(this).serializeArray(); // convert form to array
   data.push({name: "user_id", value: user_id});
   $.ajax({method: 'post', url: '/questions', data: $.param(data)})
-    .done()
+    .done(() => {
+      location = location;
+      form.reset();
+    })
     .fail(error => alert(error.responseText));
 });
+
+// delete a question
+$(document).on('click', '.delete', function(event) {
+  console.log('in delete');
+  const form = $(this).closest('form');
+  const question_id = form.attr('id')
+  event.preventDefault();
+  console.log(question_id);
+  $.ajax({method: 'delete', url: `/questions/${question_id}`})
+    .done(() => {
+      form.remove();
+    })
+    .fail(error => alert(error.responseText));
+ });
 
 </script>

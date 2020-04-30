@@ -3,7 +3,6 @@
 
 
 $('#new').on('submit', function(event) {
-  console.log("Called")
   const form = $(this).closest('form');
   event.preventDefault();
   $.ajax({method: 'post', url: '/users', data: form.serialize()})

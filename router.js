@@ -6,15 +6,6 @@ const users = require('./controller/users');
 // Create the router
 const router = express.Router();
 
-// Check for admin status
-const authorize = function(request, response, next) {
-  if (request.session.admin) {
-    next(); // Fulfill the request
-  } else {
-    response.status(401).end();
-  }
-};
-
 router.get('/', home.retrieve);
 
 // Handle question requests
@@ -23,7 +14,7 @@ router.get('/questions/:user_id', questions.retrieve);
 router.get('/questions/user/:user_id', questions.retrieve_user);
 
 router.post('/questions', questions.create);
-router.delete('/questions/:user_id', authorize, questions.delete);
+router.delete('/questions/:user_id', questions.delete);
 router.put('/questions/:user_id', questions.update);
 
 
