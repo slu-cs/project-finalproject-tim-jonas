@@ -3,36 +3,39 @@
   <nav class="nav nav-pills nav-fill flex-column">
     <%_ for (const user of userIDs) { -%>
       <%_ const status = (user === question.user_id) ? 'active bg-dark' : 'inactive'; -%>
-      <a href="/questions/<%= user -%>" class="nav-item nav-link "> <%= user -%></a>
+      <%_ if (user !== name) { -%>
+        <a href="/questions/<%= user -%>" class="nav-item nav-link "> <%= user -%></a>
+      <%_ } -%>
     <%_ } -%>
   </nav>
 </div>
 <div class="col">
   <main class="p-3">
+      <%_ if (question) { -%>
+        <h1 class ="bg-light p-1"><%= question[0].user_id -%> </h1>
+      <%_ } -%>
       <%_
       var count = 0;
       for (const aQuestion of question) {
         count++;-%>
 
-        <form id="<%= aQuestion.id -%>"  answer = "<%= aQuestion.answer -%>">
-        <h1 class ="bg-light p-1"><%= aQuestion.user_id -%> </h1>
-
-        <div id ="<%= "div" + aQuestion.id -%>" class="border rounded p-3">
-        <h3>Question: <%- aQuestion.question -%></h3>
-        <select id = "options">
-        <%_ for (const option of aQuestion.options) {-%>
-            <option value=""><%= option -%></option>
-        <%_ } -%>
-        </select>
-        </div>
-
-        <button  id ="<%= "b" + aQuestion.id -%>" class= "enter btn btn-sm btn-primary m-1">Submit</button>
+        <form id="<%= aQuestion.id -%>"  answer = "<%= aQuestion.answer -%>" class="mb-2">
+          <div id ="<%= "div" + aQuestion.id -%>" class="border rounded p-3">
+            <h3>Question: <%- aQuestion.question -%></h3>
+            <select id = "options">
+            <%_ for (const option of aQuestion.options) {-%>
+                <option value=""><%= option -%></option>
+            <%_ } -%>
+            </select>
+            <button  id ="<%= "b" + aQuestion.id -%>" class= "enter btn btn-sm btn-primary m-1">Submit</button>
+          </div>
         </form>
       <%_ }
       console.log(count); -%>
     <div class="row">
       <h3 id = "score" value = "0" class = "col-2" >SCORE: </h3>
-      <h3 id = "currscore" class="col-2"> 0 </h3>
+      <h3 id = "currscore" class="col-1"> 0 </h3>
+      <h3 class="col-1"> / </h3>
       <h3 class = "col"><%= count-%></h3>
     </div>
 
