@@ -6,8 +6,18 @@ $('.login-form').on('submit', function(event) {
   const form = $(this);
   const user_id = $('#user_id').val();
   event.preventDefault();
-  $.ajax({method: 'get', url: `/login/?user_id=${user_id}`})
-    .done(() => location = location)
+  $.ajax({method: 'get', url: `/users`})
+    .done((users) => {
+      if (users.includes(user_id)) {
+        $.ajax({method: 'get', url: `/login/?user_does_not_exist=false&user_id=${user_id}`})
+          .done(() => location = location)
+          .fail(error => alert(error.responseText));
+      } else {
+        $.ajax({method: 'get', url: `/login/?user_does_not_exist=true&user_id=${user_id}`})
+          .done(() => location = location)
+          .fail(error => alert(error.responseText));
+      }
+    })
     .fail(error => alert(error.responseText));
 });
 
