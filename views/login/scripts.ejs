@@ -16,6 +16,7 @@ $('.login-form').on('submit', function(event) {
         $.ajax({method: 'get', url: `/users/create-user`})
           .done(() => location = location)
           .fail(error => alert(error.responseText));
+          Location=location;
       }
     })
     .fail(error => alert(error.responseText));
@@ -28,6 +29,7 @@ $('.update').on('submit', function(event) {
   event.preventDefault();
   $.ajax({method: 'put', url: `/questions/${question_id}`, data: form.serialize()})
     .fail(error => alert(error.responseText));
+    Location=location;
 });
 
 // Create a question:
@@ -43,6 +45,7 @@ $('.create').on('submit', function(event) {
       form.reset();
     })
     .fail(error => alert(error.responseText));
+    Location=location;
 });
 
 // delete a question
@@ -57,6 +60,7 @@ $(document).on('click', '.delete', function(event) {
       form.remove();
     })
     .fail(error => alert(error.responseText));
+    Location=location;
  });
 
  $(document).ready(function(){
@@ -67,6 +71,7 @@ $(document).on('click', '.delete', function(event) {
     $.ajax({method: 'post', url: '/users', data: form.serialize()})
       .done(() => {
         $.ajax({method: 'get', url: `/login/?user_id=${user_id}`})
+        Location=location;
       })
       .fail(error => alert(error.responseText));
   });

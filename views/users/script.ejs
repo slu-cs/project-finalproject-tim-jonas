@@ -4,11 +4,12 @@
 $(document).ready(function(){
   $("#new").on('submit', function() {
     const form = $(this).closest('form');
-    
+
     event.preventDefault();
     $.ajax({method: 'post', url: '/users', data: form.serialize()})
       .done()
       .fail(error => alert(error.responseText));
+      Location=location;
   });
 });
 
