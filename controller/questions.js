@@ -32,22 +32,18 @@ module.exports.retrieve = function(request, response) {
 
 // get the questions for the current user
 module.exports.retrieve_user = function(request, response) {
-  if (request.params.user_does_not_exist) {
-    response.render('login/create', {user_id: user_id});
-  } else {
-    const queries = [
-      Question.find().where('user_id').equals(request.params.user_id),
-      Question.distinct('user_id')
-    ];
+  const queries = [
+    Question.find().where('user_id').equals(request.params.user_id),
+    Question.distinct('user_id')
+  ];
 
-    Promise.all(queries).then(function([question, userIDs]) {
-      if (question) {
-        response.render('login/index', {question: question, userIDs: userIDs});
-      } else {
-        next();
-      }
-    }).catch(error => next(error));
-  }
+  Promise.all(queries).then(function([question, userIDs]) {
+    if (question) {
+      response.render('login/index', {question: question, userIDs: userIDs});
+    } else {
+      next();
+    }
+  }).catch(error => next(error));
 };
 
 module.exports.create = function(request, response){

@@ -2,7 +2,7 @@
 <div class="col">
   <main class="px-3">
     <h2 class="text-center">Questions</h2>
-    <%_ if(question) {-%>
+    <%_ if(question[0]) {-%>
       <h3 class ="bg-info text-center rounded p-2"><%= question[0].user_id -%> </h3>
       <%_ for (const aQuestion of question) {-%>
         <div class='pb-3'>
@@ -38,6 +38,8 @@
           </form>
         </div>
       <%_ }-%>
+    <%_ } else {-%>
+      <h3 class ="bg-info text-center rounded p-2">You don't have any questions yet</h3>
     <%_ }-%>
   </main>
 </div>

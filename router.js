@@ -21,8 +21,7 @@ router.put('/questions/:user_id', questions.update);
 // Handle user requests
 router.get('/users', users.index);
 router.post('/users', users.create);
-
-
+router.get('/users/create-user', users.create_user);
 
 
 // Export the router

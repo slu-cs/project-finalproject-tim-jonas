@@ -1,12 +1,19 @@
 <div class="col">
-  <form id="new" class="form my-1 p-4">
-    <h2>Enter Information</h2>
-    <input type="text" name="user_id" placeholder="username" size="1" class="form-control col form-control-lg">
-    <div class="form-row">
-      <input type="text" name="first_name" placeholder="first" size="1" class="form-control col form-control-lg">
-      <input type="text" name="last_name" placeholder="last" size="1" class="form-control  col form-control-lg">
-    </div>
-  <button id = "new" class="btn btn-sm btn-primary m-1">new user</button>
-  </form>
-  <%- include('./script'); -%>
+    <form id="new" class="form my-1 p-4">
+      <h2>Enter Information</h2>
+      <ul class="list-group ">
+        <li class="list-group-item list-group-item-info rounded mb-1">
+          <input type="text" id="user_id" name="user_id" placeholder="username" size="1" class="form-control col form-control-lg">
+        </li>
+        <li class="list-group-item list-group-item-info rounded mb-1">
+          <input type="text" id="first_name" name="first_name" placeholder="first name" size="1" class="form-control col form-control-lg">
+        </li>
+        <li class="list-group-item list-group-item-info rounded mb-1">
+          <input type="text" id="last_name" name="last_name" placeholder="last name" size="1" class="form-control  col form-control-lg">
+        </li>
+      <div class="text-center mt-2">
+        <button id = "new" class="btn btn-sm btn-info m-1">new user</button>
+      </div>
+    </form>
+  </div>
 </div>

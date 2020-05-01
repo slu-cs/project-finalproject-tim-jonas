@@ -8,6 +8,12 @@ module.exports.index = function(request, response, next) {
     .catch(error => next(error));
 };
 
+// create user
+module.exports.create_user = function(request, response) {
+  request.session.name = 'DOES_NOT_EXIST';
+  response.render('login/index');
+};
+
 //create user
 module.exports.create = function(request, response){
   User.create(request.body)
