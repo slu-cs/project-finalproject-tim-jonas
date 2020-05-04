@@ -20,7 +20,8 @@ Feedback on user interfaces
 
 ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `1) On the login and new-account forms, the inputs seem much wider than they need to be.`
 
-2) I think it would be clearer for new users if you put the new-account form right on the home page, so they don't have to try to log in before finding it.
+
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `2) I think it would be clearer for new users if you put the new-account form right on the home page, so they don't have to try to log in before finding it.`
 
 3) On the edit-question form, the user_id input shouldn't be included, since we shouldn't be able to change the owner of a question.
 
