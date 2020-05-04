@@ -3,17 +3,20 @@
   <%- include('../head'); -%>
   <body>
     <%- include('../navbar', {active: 'home'}); -%>
-      <%_ if (name) { -%>
+      <%_ if (name && name !== 'DOES_NOT_EXIST') { -%>
         <div class="row">
           <%- include('./home', {question: question}); -%>
           <%- include('./add', {name: name}); -%>
         </div>
-
       <%_ } else { -%>
+        <%_ if(name === 'DOES_NOT_EXIST'){ -%>
+          <%- include('./create'); -%>
+          <%_ } else { -%>
         <div class="row">
         <%- include('./login'); -%>
         <%- include('./create'); -%>
         </div>
+        <%_ } -%>
       <%_ } -%>
     <%- include('./scripts'); -%>
   </body>
