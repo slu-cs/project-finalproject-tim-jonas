@@ -3,18 +3,14 @@
   <%- include('../head'); -%>
   <body>
     <%- include('../navbar', {active: 'home'}); -%>
-    <div class="row py-4 px-5">
-      <%_ if (name === 'DOES_NOT_EXIST') { -%>
-        <%- include('./create'); -%>
+      <%_ if (name) { -%>
+        <h1 class= "text-success text-center">LOGIN SUCCESSFUL</h1>
       <%_ } else { -%>
-        <%_ if (name) { -%>
-          <%- include('./home', {question: question}); -%>
-          <%- include('./add', {name: name}); -%>
-        <%_ } else { -%>
-          <%- include('./login'); -%>
-        <%_ } -%>
+        <div class="row">
+        <%- include('./login'); -%>
+        <%- include('./create'); -%>
+        </div>
       <%_ } -%>
-    </div>
     <%- include('./scripts'); -%>
   </body>
 </html>
