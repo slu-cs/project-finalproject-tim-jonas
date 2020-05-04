@@ -4,7 +4,11 @@
   <body>
     <%- include('../navbar', {active: 'home'}); -%>
       <%_ if (name) { -%>
-        <h1 class= "text-success text-center">LOGIN SUCCESSFUL</h1>
+        <div class="row">
+          <%- include('./home', {question: question}); -%>
+          <%- include('./add', {name: name}); -%>
+        </div>
+
       <%_ } else { -%>
         <div class="row">
         <%- include('./login'); -%>
