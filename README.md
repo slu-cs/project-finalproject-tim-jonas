@@ -23,7 +23,7 @@ Feedback on user interfaces
 
 ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `2) I think it would be clearer for new users if you put the new-account form right on the home page, so they don't have to try to log in before finding it.`
 
-3) On the edit-question form, the user_id input shouldn't be included, since we shouldn't be able to change the owner of a question.
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `3) On the edit-question form, the user_id input shouldn't be included, since we shouldn't be able to change the owner of a question.`
 
 ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) 4) `4) On the quiz page, a radio group might be better than a select, so that we can see all the options but none are selected by default.`
 
