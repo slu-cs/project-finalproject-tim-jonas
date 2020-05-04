@@ -63,6 +63,7 @@ $(document).on('click', '.delete', function(event) {
     Location=location;
  });
 
+ // create a new user
  $(document).ready(function(){
   $("#new").on('submit', function() {
     const form = $(this).closest('form');
@@ -71,7 +72,7 @@ $(document).on('click', '.delete', function(event) {
     $.ajax({method: 'post', url: '/users', data: form.serialize()})
       .done(() => {
         $.ajax({method: 'get', url: `/login/?user_id=${user_id}`})
-        Location=location;
+        location = location;
       })
       .fail(error => alert(error.responseText));
   });
