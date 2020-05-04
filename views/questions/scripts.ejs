@@ -4,11 +4,13 @@
 //get choice and answer from user, check if choice is correct then
 $(document).on('click', '.enter', function(event) {
     const form = $(this).closest('form');
-    const choice = $( "#options option:selected" , form ).text();
+    // const choice = $( "#options option:div" , form ).text();
+    const choice = $("input[name='option']:checked", form).val();
     const answer = $(form).attr('answer');
     const questionId = $(form).attr('id');
     const bID = "#b"+questionId;
     const divID = "#div"+questionId;
+    console.log(choice);
 
     if(choice === answer){
       const score = parseInt($('#score').attr('value')); //find current score

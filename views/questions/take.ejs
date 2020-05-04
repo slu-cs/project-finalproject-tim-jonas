@@ -29,11 +29,14 @@
         <form id="<%= aQuestion.id -%>"  answer = "<%= aQuestion.answer -%>" class="mb-2">
           <div id ="<%= "div" + aQuestion.id -%>" class="border rounded p-3">
             <h3>Question: <%- aQuestion.question -%></h3>
-            <select id = "options">
+            <div id = "options">
             <%_ for (const option of aQuestion.options) {-%>
-                <option value=""><%= option -%></option>
+              <p>
+              <input type="radio"  name= "option" value="<%= option -%>">
+              <label for="option "><%= option -%></label>
+              </p>
             <%_ } -%>
-            </select>
+            </div>
             <button  id ="<%= "b" + aQuestion.id -%>" class= "enter btn btn-sm btn-primary m-1">Submit</button>
           </div>
         </form>
