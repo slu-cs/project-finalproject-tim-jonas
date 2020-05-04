@@ -3,22 +3,29 @@
   <%- include('../head'); -%>
   <body>
     <%- include('../navbar', {active: 'users'}); -%>
-    <div class="row">
-      <div class="col p-5">
-        <h1>Users</h1>
-        <ul class="col p-3">
+    <div class="row px-5 py-2">
+      <table class="table table-info">
+        <thead class="thead">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%_ var count = 1; -%>
           <%_ for (const user of users) { -%>
-            <form class="mb-3" id="<%= user.id -%>" >
-              <div class="border rounded row" style="background-color: #bee5eb;">
-                <div class="col">
-                    <h1 class="py-3 pr-3"><%- user.first_name-%> <%- user.last_name-%></h1>
-                </div>
-                <h3 class="text-right pr-4 pt-4 col-6" >User Id: <%- user.user_id -%></h3>
-              </div>
-            </form>
+            <tr>
+              <th scope="row"><%- count-%></th>
+              <td><%- user.first_name-%></td>
+              <td><%- user.last_name-%></td>
+              <td><%- user.user_id -%></td>
+            </tr>
+            <%_ count += 1; -%>
           <%_ } -%>
-      </div>
+        </tbody>
+      </table>
     </div>
-
   </body>
 </html>

@@ -1,12 +1,16 @@
-<div class="col-1 ">
+<div class="col-2">
   <h6 class="centered">People</h6>
   <nav class="nav nav-pills nav-fill flex-column">
     <ul class="list-group">
     <%_ for (const user of userIDs) { -%>
-      <%_ const status = (user === question.user_id) ? 'active bg-dark' : 'inactive'; -%>
+      <%_ var current_user_id = ''; -%>
+      <%_ if (question) { -%>
+        <%_ current_user_id = question[0].user_id; -%>
+      <%_ } -%>
+      <%_ const status = (user === question[0].user_id) ? 'bg-info' : 'list-group-item-info'; -%>
       <%_ if (user !== name) { -%>
-        <li class="list-group-item list-group-item-info">
-          <a href="/questions/<%= user -%>" class="text-dark nav-item"> <%= user -%></a>
+        <li class="list-group-item <%=status-%>">
+          <a style="text-decoration: none;" href="/questions/<%= user -%>" class="text-dark nav-item"> <%= user -%></a>
         </li>
       <%_ } -%>
     <%_ } -%>
@@ -16,13 +20,12 @@
 <div class="col">
   <main class="p-3">
       <%_ if (question) { -%>
-        <h3 class ="bg-info text-center rounded p-2"><%= question[0].user_id -%></h3>
+        <h3 class ="text-light bg-info text-center rounded p-2"><%= question[0].user_id -%></h3>
       <%_ } -%>
       <%_
       var count = 0;
       for (const aQuestion of question) {
         count++;-%>
-
         <form id="<%= aQuestion.id -%>"  answer = "<%= aQuestion.answer -%>" class="mb-2">
           <div id ="<%= "div" + aQuestion.id -%>" class="border rounded p-3">
             <h3>Question: <%- aQuestion.question -%></h3>

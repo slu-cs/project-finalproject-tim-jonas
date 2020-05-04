@@ -1,15 +1,15 @@
 <header class="navbar navbar-expand navbar-light bg-info">
-  <h1 class="navbar-brand mb-0 h1 text-warning">Quiz Your Friends</h1>
+  <h1 class="navbar-brand mb-0 h1 text-dark">Quiz Your Friends</h1>
   <nav class="navbar-nav ml-3">
-    <a href="/" class="nav-item nav-link <%= (active === 'home') ? 'active' : 'inactive' -%>">Home</a>
+    <a href="/" class="text-light nav-item nav-link <%= (active === 'home') ? 'text-muted' : 'inactive' -%>">Home</a>
     <%_ if (name) { -%>
-      <a href="/users" class="nav-item nav-link <%= (active === 'users') ? 'active' : 'inactive' -%>">Users</a>
-      <a href="/questions" class="nav-item nav-link <%= (active === 'questions') ? 'active' : 'inactive' -%>">Questions</a>
+      <a href="/users" class="text-light nav-item nav-link <%= (active === 'users') ? 'text-muted' : 'inactive' -%>">Users</a>
+      <a href="/questions" class="text-light nav-item nav-link <%= (active === 'questions') ? 'text-muted' : 'inactive' -%>">Quizzes</a>
     <%_ } -%>
   </nav>
   <nav class="navbar-nav ml-auto">
     <%_ if (name) { -%>
-      <a href="/logout" class="nav-item nav-link">Logout</a>
+      <a href="/logout" class="text-light nav-item nav-link">Logout</a>
     <%_ } -%>
   </nav>
 </header>

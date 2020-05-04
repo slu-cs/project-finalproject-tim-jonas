@@ -3,7 +3,7 @@
   <main class="px-3">
     <h2 class="text-center">Questions</h2>
     <%_ if(question[0]) {-%>
-      <h3 class ="bg-info text-center rounded p-2"><%= question[0].user_id -%> </h3>
+      <h3 class ="text-light bg-info text-center rounded p-2"><%= question[0].user_id -%> </h3>
       <%_ for (const aQuestion of question) {-%>
         <div class='pb-3'>
           <form class='update' id="<%= aQuestion.id -%>" >
@@ -25,7 +25,7 @@
                     class="form-control form-control-lg font-weight-bold mb-1"
                 >
             <%_ } -%>
-            <label class="text-success">Answer:</label>
+            <label for="answer">Answer</label>
             <input
                 type="text"
                 name="answer"
