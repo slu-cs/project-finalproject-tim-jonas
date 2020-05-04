@@ -1,6 +1,10 @@
 <div class="col-flex p-3 border">
   <form id="new" class="form my-1 p-4 ">
-    <h1>New User?</h1>
+    <%_ if(name === 'DOES_NOT_EXIST'){-%>
+        <h1 class = "text-danger">Invalid Username please make an account</h1>
+      <%_  } else {-%>
+        <h1>New User?</h1>
+        <%_ } -%>
     <h2>Enter Information</h2>
     <ul class="list-group " style = "width: 400px;">
       <li class="list-group-item list-group-item-info rounded mb-1">

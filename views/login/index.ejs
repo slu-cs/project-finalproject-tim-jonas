@@ -10,11 +10,11 @@
         </div>
       <%_ } else { -%>
         <%_ if(name === 'DOES_NOT_EXIST'){ -%>
-          <%- include('./create'); -%>
+          <%- include('./create', {name: name}); -%>
           <%_ } else { -%>
         <div class="row">
         <%- include('./login'); -%>
-        <%- include('./create'); -%>
+        <%- include('./create', {name: name}); -%>
         </div>
         <%_ } -%>
       <%_ } -%>
