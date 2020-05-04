@@ -33,7 +33,7 @@ Feedback on code organization
 
 2) In the PUT and DELETE routes, the parameter you're calling user_id isn't really a user ID.
 
-3) When you create a question, instead of providing the user_id on the client side, fill in that information on the server side (using the session). Otherwise it's possible for a malicious user to create a question for someone else.
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `3) When you create a question, instead of providing the user_id on the client side, fill in that information on the server side (using the session). Otherwise it's possible for a malicious user to create a question for someone else.`
 
 Suggestions for phase three
 
