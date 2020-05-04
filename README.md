@@ -24,7 +24,7 @@ Feedback on user interfaces
 
 3) On the edit-question form, the user_id input shouldn't be included, since we shouldn't be able to change the owner of a question.
 
-4) On the quiz page, a radio group might be better than a select, so that we can see all the options but none are selected by default.
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) 4) `4) On the quiz page, a radio group might be better than a select, so that we can see all the options but none are selected by default.`
 
 Feedback on code organization
 
