@@ -8,12 +8,10 @@
         <div class='pb-3'>
           <form class='update' id="<%= aQuestion.id -%>" >
             <div class="border rounded p-3 mb-2" style="background-color: #bee5eb;">
-      
+
             <div class="form-row">
               <label for="question">Question</label>
               <input id="question" type="text" name="question" placeholder="Question" value="<%= aQuestion.question -%>"  class="form-control form-control-lg font-weight-bold mb-1">
-              <label for="user_id">User Id</label>
-              <input id="user_id" type="text" name="user_id" placeholder="User Id" value="<%= aQuestion.user_id -%>" class="form-control form-control-lg font-weight-bold mb-1">
             </div>
             <label for="options">Options</label>
             <%_ for (const option of aQuestion.options) {-%>
