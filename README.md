@@ -18,7 +18,7 @@
 Feedback on user interfaces
 
 
-1) On the login and new-account forms, the inputs seem much wider than they need to be.
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `1) On the login and new-account forms, the inputs seem much wider than they need to be.`
 
 2) I think it would be clearer for new users if you put the new-account form right on the home page, so they don't have to try to log in before finding it.
 
