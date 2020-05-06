@@ -26,6 +26,7 @@ $('.login-form').on('submit', function(event) {
 $('.update').on('submit', function(event) {
   const form = $(this);
   const question_id = form.attr('id');
+  $('[id^=input-]').removeClass('bg-dark text-light');
   event.preventDefault();
   $.ajax({method: 'put', url: `/questions/${question_id}`, data: form.serialize()})
     .fail(error => alert(error.responseText));
@@ -76,6 +77,11 @@ $(document).on('click', '.delete', function(event) {
       })
       .fail(error => alert(error.responseText));
   });
+});
+
+//show edited sections
+$('[id^=input-]').on('keydown',function(){
+    $(this).addClass('bg-dark text-light');
 });
 
 </script>

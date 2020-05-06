@@ -16,6 +16,7 @@
             <label for="options">Options</label>
             <%_ for (const option of aQuestion.options) {-%>
                 <input
+                    id = "input-<%- option -%>"
                     type="text"
                     name="options"
                     placeholder="option"
@@ -25,6 +26,7 @@
             <%_ } -%>
             <label for="answer">Answer</label>
             <input
+                id = "input-answer"
                 type="text"
                 name="answer"
                 placeholder="Answer"
