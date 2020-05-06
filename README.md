@@ -41,7 +41,7 @@ Suggestions for phase three
 
 
 
-2) For data integrity, some of the fields in your schemas should be required (you can decide which ones) and all strings should be trimmed and length-limited.
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `2) For data integrity, some of the fields in your schemas should be required (you can decide which ones) and all strings should be trimmed and length-limited.`
 
 
 

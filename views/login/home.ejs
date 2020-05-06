@@ -11,7 +11,9 @@
 
             <div class="form-row">
               <label for="question">Question</label>
-              <input id="question" type="text" name="question" placeholder="Question" value="<%= aQuestion.question -%>"  class="form-control form-control-lg font-weight-bold mb-1">
+              <input id="input-question" type="text" name="question" placeholder="Question" value="<%= aQuestion.question -%>"
+              class="form-control form-control-lg font-weight-bold mb-1"
+              maxlength = "60">
             </div>
             <label for="options">Options</label>
             <%_ for (const option of aQuestion.options) {-%>
@@ -22,6 +24,7 @@
                     placeholder="option"
                     value="<%- option -%>"
                     class="form-control form-control-lg font-weight-bold mb-1"
+                    maxlength="40"
                 >
             <%_ } -%>
             <label for="answer">Answer</label>
@@ -32,6 +35,7 @@
                 placeholder="Answer"
                 value="<%- aQuestion.answer -%>"
                 class="form-control form-control-lg font-weight-bold mb-1"
+                maxlength="40"
             >
             <button class="delete btn btn-sm btn-primary m-1">Delete</button>
             <button class="btn btn-sm btn-primary m-1">Update</button>

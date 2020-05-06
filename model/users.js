@@ -2,9 +2,15 @@ const mongoose = require('mongoose');
 
 // Schema for a collection of questions
 const User = new mongoose.Schema({
-  user_id: String, 
-  first_name: String,
-  last_name: String
+  user_id: {
+    type: String,
+    required: true},
+  first_name: {
+    type: String,
+    required: true},
+  last_name: {
+    type: String,
+    required: true},
 });
 
 // Speed up queries on all fields

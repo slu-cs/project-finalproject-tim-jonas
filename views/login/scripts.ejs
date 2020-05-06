@@ -69,6 +69,7 @@ $(document).on('click', '.delete', function(event) {
   $("#new").on('submit', function() {
     const form = $(this).closest('form');
     const user_id = form.find('#user_id');
+    raise(user_id);
     event.preventDefault();
     $.ajax({method: 'post', url: '/users', data: form.serialize()})
       .done(() => {
