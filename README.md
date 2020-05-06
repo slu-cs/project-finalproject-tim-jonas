@@ -37,7 +37,7 @@ Feedback on code organization
 
 Suggestions for phase three
 
-1) Currently, a user can register with a duplicate username. The simplest fix would be to change the user_id field in your User schema to '_id. (MongoDB requires object IDs to be unique, so it will throw an error if someone tries to register with a duplicate ID.)
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `1) Currently, a user can register with a duplicate username. The simplest fix would be to change the user_id field in your User schema to '_id. (MongoDB requires object IDs to be unique, so it will throw an error if someone tries to register with a duplicate ID.)`
 
 
 
