@@ -4,16 +4,20 @@ const mongoose = require('mongoose');
 const Question = new mongoose.Schema({
   user_id: {
     type: String,
-    required: true},
+    required: true
+  },
   question:{
     type: String,
-    required: true},
+    required: true
+  },
   answer: {
     type: String,
-    required: true},
+    required: true
+  },
   options: {
     type: [String],
-    required: true},
+    required: true
+  },
 });
 
 // Speed up queries on all fields

@@ -5,13 +5,16 @@ const User = new mongoose.Schema({
   user_id: {
     type: String,
     required: true,
-    unique: true,},
+    unique: true
+  },
   first_name: {
     type: String,
-    required: true},
+    required: true
+  },
   last_name: {
     type: String,
-    required: true},
+    required: true
+  },
 });
 
 // Speed up queries on all fields
