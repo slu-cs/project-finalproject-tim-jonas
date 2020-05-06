@@ -36,13 +36,14 @@ app.use(function(request, response, next) {
   next();
 });
 
-// Enter admin mode and return to the previous page
+// Login and show the logged in user's questions
 app.get('/login', function(request, response) {
+  console.log(`Logging in ${request.query.user_id}`)
   request.session.name = request.query.user_id;
   response.redirect(`/questions/user/${request.session.name}`);
 });
 
-// Exit admin mode and return to the previous page
+// Logout the current user and return to the home page
 app.get('/logout', function(request, response) {
   request.session.name = undefined;
   response.redirect('/');

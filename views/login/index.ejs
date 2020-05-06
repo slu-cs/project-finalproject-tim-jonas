@@ -4,17 +4,17 @@
   <body>
     <%- include('../navbar', {active: 'home'}); -%>
       <%_ if (name && name !== 'DOES_NOT_EXIST') { -%>
-        <div class="row">
+        <div class="row py-3">
           <%- include('./home', {question: question}); -%>
           <%- include('./add', {name: name}); -%>
         </div>
       <%_ } else { -%>
         <%_ if(name === 'DOES_NOT_EXIST'){ -%>
           <%- include('./create', {name: name}); -%>
-          <%_ } else { -%>
+        <%_ } else { -%>
         <div class="row">
-        <%- include('./login'); -%>
-        <%- include('./create', {name: name}); -%>
+          <%- include('./login'); -%>
+          <%- include('./create', {name: name}); -%>
         </div>
         <%_ } -%>
       <%_ } -%>

@@ -1,12 +1,12 @@
 
 <div class="col">
-  <main class="px-3">
+  <main class="pl-3">
     <h2 class="text-center">Questions</h2>
     <%_ if(question[0]) {-%>
-      <h3 class ="text-light bg-info text-center rounded p-2"><%= question[0].user_id -%> </h3>
+      <h3 class ="text-light bg-info text-center rounded p-2"><%= question[0].user_id -%></h3>
       <%_ for (const aQuestion of question) {-%>
         <div class='pb-3'>
-          <form class='update' id="<%= aQuestion.id -%>" >
+          <form class='update' id="<%= aQuestion.id -%>" name="<%= aQuestion.user_id -%>">
             <div class="border rounded p-3 mb-2" style="background-color: #bee5eb;">
 
             <div class="form-row">

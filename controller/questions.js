@@ -15,7 +15,7 @@ module.exports.index = function(request, response) {
 };
 
 // get all of the questions for a single user
-module.exports.retrieve = function(request, response) {
+module.exports.retrieve = function(request, response, next) {
   const queries = [
     Question.find().where('user_id').equals(request.params.user_id),
     Question.distinct('user_id')
@@ -31,7 +31,7 @@ module.exports.retrieve = function(request, response) {
 };
 
 // get the questions for the current user
-module.exports.retrieve_user = function(request, response) {
+module.exports.retrieve_user = function(request, response, next) {
   const queries = [
     Question.find().where('user_id').equals(request.params.user_id),
     Question.distinct('user_id')
@@ -46,20 +46,22 @@ module.exports.retrieve_user = function(request, response) {
   }).catch(error => next(error));
 };
 
+// create a question
 module.exports.create = function(request, response){
   Question.create(request.body)
   .then(question => response.status(201).send(question))
   .catch(error => next(error));
 };
 
-module.exports.delete = function(request, response) {
+// delete a question
+module.exports.delete = function(request, response, next) {
   Question.findByIdAndDelete(request.params.user_id)
     .then(question => question ? response.status(200).end() : next())
     .catch(error => next(error));
 };
 
 // PUT /questions/:id (with the changes in the request body)
-module.exports.update = function(request, response) {
+module.exports.update = function(request, response, next) {
   Question.findByIdAndUpdate(request.params.user_id, request.body)
     .then(question => question ? response.status(200).end() : next())
     .catch(error => next(error));

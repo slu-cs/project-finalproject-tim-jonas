@@ -1,19 +1,21 @@
-<div class="col-flex  p-5 border">
+<div class="text-center col p-5 border-right">
   <form id="<%- name -%>" class="login-form">
     <h1>Existing User?</h1>
-    <h2 class="text-left">Enter Your Username</h2>
-    <ul class="list-group" style = "width: 400px;">
-      <li class="list-group-item list-group-item-info">
-        <input type="text"
-                id="user_id"
-                placeholder="user_id"
-                value="<%- name -%>"
-                class="form-control"
-                 maxlength="20">
-
-      </li>
-    </ul>
-    <div class="text-left mt-2">
+    <h2>Enter Your Username</h2>
+    <div class="d-flex">
+      <ul class="list-inline mx-auto justify-content-center" style = "width: 400px;">
+        <li class="p-3 rounded list-group-item list-group-item-info">
+          <input 
+            type="text"
+            id="user_id"
+            placeholder="user_id"
+            value="<%- name -%>"
+            class="form-control"
+            maxlength="20">
+        </li>
+      </ul>
+    </div>
+    <div class="mt-2">
         <button id = "login-submit" class="btn btn-sm btn-info m-1">Login</button>
     </div>
   </form>

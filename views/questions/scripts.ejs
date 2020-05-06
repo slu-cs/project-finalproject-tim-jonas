@@ -10,7 +10,6 @@ $(document).on('click', '.enter', function(event) {
     const questionId = $(form).attr('id');
     const bID = "#b"+questionId;
     const divID = "#div"+questionId;
-    console.log(choice);
 
     if(choice === answer){
       const score = parseInt($('#score').attr('value')); //find current score

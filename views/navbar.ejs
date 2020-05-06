@@ -2,13 +2,13 @@
   <h1 class="navbar-brand mb-0 h1 text-dark">Quiz Your Friends</h1>
   <nav class="navbar-nav ml-3">
     <a href="/" class="text-light nav-item nav-link <%= (active === 'home') ? 'text-muted' : 'inactive' -%>">Home</a>
-    <%_ if (name) { -%>
+    <%_ if (name && name !== 'DOES_NOT_EXIST') { -%>
       <a href="/users" class="text-light nav-item nav-link <%= (active === 'users') ? 'text-muted' : 'inactive' -%>">Users</a>
       <a href="/questions" class="text-light nav-item nav-link <%= (active === 'questions') ? 'text-muted' : 'inactive' -%>">Quizzes</a>
     <%_ } -%>
   </nav>
   <nav class="navbar-nav ml-auto">
-    <%_ if (name) { -%>
+    <%_ if (name && name !== 'DOES_NOT_EXIST') { -%>
       <a href="/logout" class="text-light nav-item nav-link">Logout</a>
     <%_ } -%>
   </nav>
